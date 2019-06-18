@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Employees</class>
+ <widget class="QMainWindow" name="Employees">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>652</width>
+    <height>391</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>541</width>
+      <height>321</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>66</width>
+      <height>326</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resources/employees.qrc">
+         <normaloff>:/icons/svg/boss-1.svg</normaloff>:/icons/svg/boss-1.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>52</width>
+         <height>52</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resources/employees.qrc">
+         <normaloff>:/icons/svg/boss-2.svg</normaloff>:/icons/svg/boss-2.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>52</width>
+         <height>52</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resources/employees.qrc">
+         <normaloff>:/icons/svg/collaboration.svg</normaloff>:/icons/svg/collaboration.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>52</width>
+         <height>52</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resources/employees.qrc">
+         <normaloff>:/icons/svg/customer-service-1.svg</normaloff>:/icons/svg/customer-service-1.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>52</width>
+         <height>52</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resources/employees.qrc">
+         <normaloff>:/icons/svg/watches.svg</normaloff>:/icons/svg/watches.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>52</width>
+         <height>52</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>652</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuRelat_rios">
+    <property name="title">
+     <string>Relatórios</string>
+    </property>
+    <addaction name="actionClientes"/>
+   </widget>
+   <widget class="QMenu" name="menuSobre">
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Sobre</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuSair">
+    <property name="title">
+     <string>Sair</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCadastros">
+    <property name="title">
+     <string>Cadastros</string>
+    </property>
+    <addaction name="actionEmpregado"/>
+    <addaction name="actionDepartamento"/>
+    <addaction name="actionGerente_2"/>
+   </widget>
+   <addaction name="menuCadastros"/>
+   <addaction name="menuRelat_rios"/>
+   <addaction name="menuSobre"/>
+   <addaction name="menuSair"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCliente">
+   <property name="text">
+    <string>Cliente</string>
+   </property>
+  </action>
+  <action name="actionGerente">
+   <property name="text">
+    <string>Gerente</string>
+   </property>
+  </action>
+  <action name="actionTitulo">
+   <property name="text">
+    <string>Departamento</string>
+   </property>
+  </action>
+  <action name="actionClientes">
+   <property name="text">
+    <string>Empregados</string>
+   </property>
+  </action>
+  <action name="actionEmpregado">
+   <property name="text">
+    <string>Empregado</string>
+   </property>
+  </action>
+  <action name="actionDepartamento">
+   <property name="text">
+    <string>Departamento</string>
+   </property>
+  </action>
+  <action name="actionGerente_2">
+   <property name="text">
+    <string>Gerente</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources/employees.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>Employees</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
