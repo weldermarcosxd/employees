@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>240</width>
-    <height>320</height>
+    <width>300</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>70</y>
+     <x>98</x>
+     <y>90</y>
      <width>104</width>
      <height>104</height>
     </rect>
@@ -38,8 +38,8 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>52</x>
-     <y>180</y>
+     <x>80</x>
+     <y>200</y>
      <width>141</width>
      <height>20</height>
     </rect>
@@ -54,8 +54,8 @@
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>52</x>
-     <y>210</y>
+     <x>80</x>
+     <y>230</y>
      <width>141</width>
      <height>20</height>
     </rect>
@@ -73,8 +73,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>52</x>
-     <y>240</y>
+     <x>80</x>
+     <y>260</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -103,8 +103,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
+     <x>78</x>
+     <y>50</y>
      <width>151</width>
      <height>31</height>
     </rect>
@@ -130,6 +130,22 @@ color: rgb(255, 255, 255);</string>
  </resources>
  <connections>
   <connection>
+   <sender>lineEdit_2</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButton</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>lineEdit</sender>
    <signal>returnPressed()</signal>
    <receiver>lineEdit_2</receiver>
@@ -142,22 +158,6 @@ color: rgb(255, 255, 255);</string>
     <hint type="destinationlabel">
      <x>122</x>
      <y>219</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_2</sender>
-   <signal>returnPressed()</signal>
-   <receiver>pushButton</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>122</x>
-     <y>219</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>122</x>
-     <y>255</y>
     </hint>
    </hints>
   </connection>

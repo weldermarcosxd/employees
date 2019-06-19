@@ -6,25 +6,68 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
-    <height>391</height>
+    <width>650</width>
+    <height>460</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>460</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="toolButtonStyle">
-   <enum>Qt::ToolButtonTextOnly</enum>
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QGraphicsView" name="graphicsViewMainImage">
     <property name="geometry">
      <rect>
       <x>100</x>
       <y>20</y>
-      <width>541</width>
-      <height>321</height>
+      <width>540</width>
+      <height>390</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMainImage">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>308</width>
+      <height>308</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/employees.qrc">:/icons/svg/business-presentation.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QWidget" name="">
@@ -33,12 +76,12 @@
       <x>20</x>
       <y>20</y>
       <width>66</width>
-      <height>326</height>
+      <height>392</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButtonEmployees">
        <property name="text">
         <string/>
        </property>
@@ -55,7 +98,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButtonManager">
        <property name="text">
         <string/>
        </property>
@@ -72,7 +115,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="pushButtonDepartment">
        <property name="text">
         <string/>
        </property>
@@ -89,7 +132,24 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="pushButtonDepartment_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="resources/employees.qrc">
+         <normaloff>:/icons/svg/collaboration.svg</normaloff>:/icons/svg/collaboration.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>52</width>
+         <height>52</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonInfo">
        <property name="text">
         <string/>
        </property>
@@ -106,7 +166,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="pushButtonExit">
        <property name="text">
         <string/>
        </property>
@@ -130,7 +190,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>652</width>
+     <width>650</width>
      <height>21</height>
     </rect>
    </property>
@@ -138,7 +198,7 @@
     <property name="title">
      <string>Relatórios</string>
     </property>
-    <addaction name="actionClientes"/>
+    <addaction name="actionRelEmployee"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
     <property name="acceptDrops">
@@ -147,22 +207,31 @@
     <property name="title">
      <string>Sobre</string>
     </property>
+    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuSair">
     <property name="title">
      <string>Sair</string>
     </property>
+    <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuCadastros">
     <property name="title">
      <string>Cadastros</string>
     </property>
-    <addaction name="actionEmpregado"/>
-    <addaction name="actionDepartamento"/>
-    <addaction name="actionGerente_2"/>
+    <addaction name="actionCadEmployee"/>
+    <addaction name="actionCadDepartment"/>
+    <addaction name="actionCadManager"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Configurações</string>
+    </property>
+    <addaction name="actionSettings"/>
    </widget>
    <addaction name="menuCadastros"/>
    <addaction name="menuRelat_rios"/>
+   <addaction name="menuSettings"/>
    <addaction name="menuSobre"/>
    <addaction name="menuSair"/>
   </widget>
@@ -182,24 +251,39 @@
     <string>Departamento</string>
    </property>
   </action>
-  <action name="actionClientes">
+  <action name="actionRelEmployee">
    <property name="text">
     <string>Empregados</string>
    </property>
   </action>
-  <action name="actionEmpregado">
+  <action name="actionCadEmployee">
    <property name="text">
     <string>Empregado</string>
    </property>
   </action>
-  <action name="actionDepartamento">
+  <action name="actionCadDepartment">
    <property name="text">
     <string>Departamento</string>
    </property>
   </action>
-  <action name="actionGerente_2">
+  <action name="actionCadManager">
    <property name="text">
     <string>Gerente</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>Sobre</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Configurações</string>
    </property>
   </action>
  </widget>
@@ -208,7 +292,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton_5</sender>
+   <sender>pushButtonExit</sender>
    <signal>clicked()</signal>
    <receiver>Employees</receiver>
    <slot>close()</slot>
@@ -216,6 +300,22 @@
     <hint type="sourcelabel">
      <x>62</x>
      <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>Employees</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>52</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>325</x>
