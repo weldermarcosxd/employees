@@ -17,9 +17,7 @@ class LoginController(QtWidgets.QWidget):
         credentials['username'] = self.win.lineEdit.text()
         credentials['password'] = self.win.lineEdit_2.text()
 
-        self.load()
-
-        if(credentials['username'] == 'weldermarcosxd'):
+        if(self.load(credentials)):
             self.change_window.emit('employees')
         else:
             msg = QtWidgets.QMessageBox()
@@ -29,7 +27,7 @@ class LoginController(QtWidgets.QWidget):
             msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
             msg.exec_()
 
-    def load(self):
+    def load(self, credentials):
         db = QtSql.QSqlDatabase.addDatabase("QMYSQL")
         db.setHostName("127.0.0.1")
         db.setDatabaseName("employees")
@@ -38,6 +36,21 @@ class LoginController(QtWidgets.QWidget):
         ok = db.open()
         if(not ok):
             print(db.lastError().text())
+
+        query = QtSql.QSqlQuery("SELECT name, pass FROM users where name = '%s';" % (
+            credentials['username']), db)
+
+        db.close()
+
+        while (query.next()):
+            username = query.value(0)
+            password = query.value(1)
+            if password == credentials['password']:
+                return True
+        else:
+            print(query.lastQuery())
+
+        return False
 
 
 if __name__ == "__main__":
