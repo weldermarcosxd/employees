@@ -1,31 +1,34 @@
 import sys
 import resources
 from PyQt5 import uic, QtWidgets
+from controllers.employeesController import EmployeesController
+from controllers.loginController import LoginController
 
 
 class App(QtWidgets.QWidget):
 
     def __init__(self):
         super().__init__()
-        self.initUI()
+        self.login()
 
-    def initUI(self):
-        self.win = uic.loadUi("views/login.ui")
-        self.win.pushButton.clicked.connect(self.login)
+    def employees(self):
+        employeesController = EmployeesController()
+        self.win = employeesController.win
+        self.emiss = employeesController
+        self.emiss.change_window.connect(self.changeWindow)
         self.win.show()
 
     def login(self):
-        self.win.close()
-        self.win = uic.loadUi("views/employees.ui")
-        self.win.actionExit.triggered.connect(self.logout)
-        self.win.pushButtonExit.clicked.connect(self.logout)
+        loginController = LoginController()
+        self.win = loginController.win
+        self.emiss = loginController
+        self.emiss.change_window.connect(self.changeWindow)
         self.win.show()
 
-    def logout(self):
+    def changeWindow(self, method_name):
         self.win.close()
-        self.win = uic.loadUi("views/login.ui")
-        self.win.pushButton.clicked.connect(self.login)
-        self.win.show()
+        method_to_call = getattr(self, method_name)
+        method_to_call()
 
 
 if __name__ == "__main__":

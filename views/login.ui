@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Login</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/employees.qrc">
+    <normaloff>:/icons/svg/boss.svg</normaloff>:/icons/svg/boss.svg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -29,7 +33,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources/employees.qrc">:/icons/svg/network.svg</pixmap>
+    <pixmap resource="../resources/employees.qrc">:/icons/svg/network.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -126,6 +130,7 @@ color: rgb(255, 255, 255);</string>
   </widget>
  </widget>
  <resources>
+  <include location="../resources/employees.qrc"/>
   <include location="resources/employees.qrc"/>
  </resources>
  <connections>
