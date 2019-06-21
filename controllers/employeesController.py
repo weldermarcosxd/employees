@@ -11,10 +11,15 @@ class EmployeesController(QtWidgets.QWidget):
         self.win = uic.loadUi("views/employees.ui")
         self.win.pushButtonExit.clicked.connect(self.logout)
         self.win.actionExit.triggered.connect(self.logout)
+        self.win.pushButtonInfo.clicked.connect(self.about)
+        self.win.actionAbout.triggered.connect(self.about)
         self.win.show()
 
     def logout(self):
         self.change_window.emit('login')
+
+    def about(self):
+        self.change_window.emit('about')
 
 
 if __name__ == "__main__":

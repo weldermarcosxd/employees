@@ -2,8 +2,8 @@ import sys
 import resources
 from PyQt5 import uic, QtWidgets
 from controllers.employeesController import EmployeesController
-
 from controllers.loginController import LoginController
+from controllers.aboutController import AboutController
 
 
 class App(QtWidgets.QWidget):
@@ -24,6 +24,12 @@ class App(QtWidgets.QWidget):
         self.win = loginController.win
         self.emiss = loginController
         self.emiss.change_window.connect(self.changeWindow)
+        self.win.show()
+
+    def about(self):
+        aboutController = AboutController()
+        self.win = aboutController
+        self.win.change_window.connect(self.changeWindow)
         self.win.show()
 
     def changeWindow(self, method_name):
