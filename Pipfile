@@ -9,6 +9,7 @@ verify_ssl = true
 pylint = "*"
 autopep8 = "*"
 pyqt5 = "*"
+agatereports = "*"
 
 [requires]
 python_version = "3.7"

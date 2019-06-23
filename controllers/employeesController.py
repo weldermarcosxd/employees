@@ -5,6 +5,7 @@ from PyQt5 import uic, QtWidgets, QtCore
 class EmployeesController(QtWidgets.QWidget):
 
     change_window = QtCore.pyqtSignal(str)
+    callRpt = QtCore.pyqtSignal(str)
 
     def __init__(self):
         super().__init__()
@@ -13,6 +14,8 @@ class EmployeesController(QtWidgets.QWidget):
         self.win.actionExit.triggered.connect(self.logout)
         self.win.pushButtonInfo.clicked.connect(self.about)
         self.win.actionAbout.triggered.connect(self.about)
+        self.win.actionRelEmployee.triggered.connect(self.reportEmp)
+        self.win.actionRelDepartment.triggered.connect(self.reportDept)
         self.win.show()
 
     def logout(self):
@@ -20,6 +23,12 @@ class EmployeesController(QtWidgets.QWidget):
 
     def about(self):
         self.change_window.emit('about')
+
+    def reportEmp(self):
+        self.callRpt.emit('employeesRpt')
+
+    def reportDept(self):
+        self.callRpt.emit('departmentRpt')
 
 
 if __name__ == "__main__":

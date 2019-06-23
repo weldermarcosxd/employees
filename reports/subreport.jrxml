@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="399cfb7f-cff4-4ed5-b254-eab91138452f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="employees"/>
+	<parameter name="Depto" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT employees.employees.emp_no,
+	employees.employees.birth_date,
+	employees.employees.first_name,
+	employees.employees.last_name,
+	employees.employees.gender,
+	employees.employees.hire_date,
+    employees.dept_emp.dept_no
+FROM employees.dept_emp
+	INNER JOIN employees.employees ON 
+	 employees.dept_emp.emp_no = employees.employees.emp_no
+WHERE employees.dept_emp.dept_no = $P{Depto} ]]>
+	</queryString>
+	<field name="emp_no" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="emp_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="employees"/>
+	</field>
+	<field name="birth_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="birth_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="employees"/>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="employees"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="employees"/>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gender"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="employees"/>
+	</field>
+	<field name="hire_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="hire_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="employees"/>
+	</field>
+	<field name="dept_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dept_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dept_emp"/>
+	</field>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="95" height="13" uuid="0ae77e13-2fda-409b-a750-1c293c66d2f6"/>
+				<textFieldExpression><![CDATA[$F{emp_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="0" width="92" height="13" uuid="bae83b07-1656-4c8d-8b9d-37de51219998"/>
+				<textFieldExpression><![CDATA[$F{birth_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="0" width="92" height="13" uuid="9f120868-bf2c-4607-bbaa-e6d84d2ac46b"/>
+				<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="92" height="13" uuid="3fd04494-c184-4502-97d4-a52040ab8bfd"/>
+				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="19" height="13" uuid="a7248781-1b71-41e5-9cac-b65d0a846bd9"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="92" height="13" uuid="e71b7e35-b695-462c-9671-0cf6bf421c70"/>
+				<textFieldExpression><![CDATA[$F{hire_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="0" width="92" height="13" uuid="690dd37a-48e0-4a91-8905-04c875f042f7"/>
+				<textFieldExpression><![CDATA[$F{dept_no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

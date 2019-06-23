@@ -136,13 +136,13 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButtonDepartment_2">
+      <widget class="QPushButton" name="pushButtonSettings">
        <property name="text">
         <string/>
        </property>
        <property name="icon">
         <iconset resource="../resources/employees.qrc">
-         <normaloff>:/icons/svg/collaboration.svg</normaloff>:/icons/svg/collaboration.svg</iconset>
+         <normaloff>:/icons/svg/men.svg</normaloff>:/icons/svg/men.svg</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -203,6 +203,7 @@
      <string>Relatórios</string>
     </property>
     <addaction name="actionRelEmployee"/>
+    <addaction name="actionRelDepartment"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
     <property name="acceptDrops">
@@ -220,6 +221,9 @@
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuCadastros">
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="title">
      <string>Cadastros</string>
     </property>
@@ -240,24 +244,12 @@
    <addaction name="menuSair"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionCliente">
-   <property name="text">
-    <string>Cliente</string>
-   </property>
-  </action>
-  <action name="actionGerente">
-   <property name="text">
-    <string>Gerente</string>
-   </property>
-  </action>
-  <action name="actionTitulo">
-   <property name="text">
-    <string>Departamento</string>
-   </property>
-  </action>
   <action name="actionRelEmployee">
    <property name="text">
     <string>Empregados</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="actionCadEmployee">
@@ -290,10 +282,18 @@
     <string>Configurações</string>
    </property>
   </action>
+  <action name="actionRelDepartment">
+   <property name="text">
+    <string>Departamentos</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../resources/employees.qrc"/>
-  <include location="resources/employees.qrc"/>
+  <include location="../resources/employees.qrc"/>
  </resources>
  <connections/>
 </ui>
