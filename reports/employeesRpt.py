@@ -9,7 +9,6 @@ from time import time
 
 class EmployeesRpt(object):
     def print(self):
-        logger.info('running datasource mysql sample')
         jrxml_filename = './reports/employees.jrxml'  # input jrxml filename
         output_filename = 'output\datasource_mysql.pdf'  # output pdf filename
 
