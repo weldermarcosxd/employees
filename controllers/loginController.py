@@ -11,6 +11,7 @@ class LoginController(QtWidgets.QWidget):
         super().__init__()
         self.win = uic.loadUi("views/login.ui")
         self.win.pushButton.clicked.connect(self.logins)
+        self.win.lineEdit.setText("weldermarcosxd")
         self.dao = UsersDao()
         self.win.show()
 

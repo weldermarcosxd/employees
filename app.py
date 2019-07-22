@@ -2,6 +2,7 @@ import sys
 import resources
 from PyQt5 import uic, QtWidgets
 from controllers.employeesController import EmployeesController
+from controllers.employeesListController import EmployeesListController
 from controllers.loginController import LoginController
 from controllers.aboutController import AboutController
 from reports.employeesRpt import EmployeesRpt
@@ -20,6 +21,12 @@ class App(QtWidgets.QWidget):
         self.emiss = employeesController
         self.emiss.change_window.connect(self.changeWindow)
         self.emiss.callRpt.connect(self.callReport)
+        self.win.show()
+
+    def employeesList(self):
+        employeesListController = EmployeesListController()
+        self.win = employeesListController
+        self.win.change_window.connect(self.changeWindow)
         self.win.show()
 
     def login(self):

@@ -14,12 +14,17 @@ class EmployeesController(QtWidgets.QWidget):
         self.win.actionExit.triggered.connect(self.logout)
         self.win.pushButtonInfo.clicked.connect(self.about)
         self.win.actionAbout.triggered.connect(self.about)
+        self.win.pushButtonEmployees.clicked.connect(self.employees)
+        self.win.actionCadEmployee.triggered.connect(self.employees)
         self.win.actionRelEmployee.triggered.connect(self.reportEmp)
         self.win.actionRelDepartment.triggered.connect(self.reportDept)
         self.win.show()
 
     def logout(self):
         self.change_window.emit('login')
+
+    def employees(self):
+        self.change_window.emit('employeesList')
 
     def about(self):
         self.change_window.emit('about')
